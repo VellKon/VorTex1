@@ -13,6 +13,18 @@
         <div class="container">
             <nav class="nav">
                 <a class="logo" href="#">VorTex</a>
+
+                            <!-- Бургер-меню  -->
+            <div class="burger-menu" onclick="toggleBurgerMenu()">
+                <div class="burger-icon">&#9776;</div>
+                <ul class="burger-menu-list">
+                    <li><a href="#">О сайте</a></li>
+                    <li><a href="#">Проекты</a></li>
+                    <li><a href="#">Коды</a></li>
+                    <li><a href="#">Связаться с нами</a></li>
+                </ul>
+            </div>
+
                 <ul class="menu">
                     <li class="menu-item">
                         <a href="about-site\about-site.html" class="menu-link">О сайте</a>
@@ -31,6 +43,13 @@
             </nav>
         </div>
         <div class="header-white-line"></div>
+
+        <script>
+            function toggleBurgerMenu() {
+                var burgerMenuList = document.querySelector('.burger-menu-list');
+                burgerMenuList.classList.toggle('show');
+            }
+        </script>
     </header>
     
     <script>
