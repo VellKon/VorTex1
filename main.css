@@ -189,13 +189,14 @@ body{
     color: #fff;
 }
 
-.main-container{
+.main-container {
     max-height: 700px;
     margin: 0 120px 0 120px;
+    padding-top: 120px;
 }
 
 .text-and-button{
-    max-width: 560px;
+    max-width: 610px;
     padding-top: 25px;
 }
 
@@ -210,8 +211,21 @@ body{
     margin: 20px 0 20px 0;
 }
 
+.button-languages-container{
+    margin-top: 75px;
+}
+
+.teext{
+    font-size: 20px;
+}
+
+.container-code{
+    display: flex;
+    margin-top: 20px;
+}
+
 .discription{
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .button-code-container{
@@ -230,6 +244,7 @@ body{
     color: #fff;
     font-size: 22px;
     border-radius: 2rem;
+    margin-right: 15px;
     border: none;
     position: relative;
     background: var(--secondary-color);
@@ -301,7 +316,7 @@ body{
 
 .features-card{
     background-color: rgba(18, 20, 29, 0.3);;
-    margin-top: 20vh;
+    margin-top: 100px;
     margin-bottom: 30px;
 }
 
@@ -537,16 +552,6 @@ section{
         font-size: 16px;
     }
 
-    .button-code-container {
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .button-code {
-        width: 100%;
-        max-width: 200px;
-    }
-
     .half-circle-1::after {
         width: 300px;
         height: 300px;
@@ -604,5 +609,12 @@ section{
         border-radius: 15px;
         max-width: 400px;
         margin: 15px 0 15px 0;
+    }
+}
+
+@media screen and (min-width: 1081px){
+
+    .burger-icon{
+        display: none;
     }
 }
