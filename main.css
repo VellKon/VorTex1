@@ -198,6 +198,11 @@ body{
     pointer-events: none
 }
 
+.bolt{
+    width: 500px;
+     height: 550px;
+}
+
 .features-card{
     background-color: rgba(18, 20, 29, 0.3);;
     margin-top: 100px;
@@ -219,7 +224,7 @@ body{
     max-width: 400px;
 }
 
-.features-icon{
+.features-icon {
     background-color: var(--xz-color);
     width: 90px;
     height: 90px;
@@ -229,6 +234,11 @@ body{
     margin-bottom: 30px;
     transition: 0.5s ease;
 }
+
+.card.animate:hover .features-icon {
+    background-color: var(--decoration-color);
+}
+
 
 .features-title{
     font-size: 22px;
@@ -241,10 +251,6 @@ body{
     margin: 20px 0;
     background-image: linear-gradient(to right, #2272FF, var(--decoration-color));
     transition: background 0.5s ease; /* Добавляем плавную анимацию при переходе */
-}
-
-.card:hover .features-icon{
-    background-color: var(--decoration-color);
 }
 
 .discription-card{
@@ -400,4 +406,149 @@ a:hover .text{
     z-index: -1;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     transform: translateX(60%) translateY(65%) ;
+}
+
+@media screen and (max-width: 425px) {
+
+    .container {
+        margin: 0 5px 0 5px;
+    }   
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .button {
+        width: 60px;
+        height: 40px;
+        font-size: 12px;
+        margin-left: auto;
+    }
+
+    .main-container {
+        max-height: 700px;
+        margin: 0 25px 0 25px;
+        padding-top: 60px;
+    }
+
+    .welkom-title{
+        font-size: 20px;
+    }
+
+    .bolt{
+        width: 150px;
+         height: 200px;
+    }
+
+    .discription {
+        max-width: 220px;
+    }
+
+    .discription p {
+        font-size: 12px;
+    }
+
+    .features {
+        display: block;
+        padding: 15px;
+        color: #fff;
+        flex-direction: column;
+    }
+
+    .features-icon {
+        width: 65px;
+        height: 65px;
+        line-height: 65px;
+    }
+
+    .card {
+        padding: 25px;
+        max-width: 300px;
+    }
+    
+    .card:nth-child(1){
+        margin-bottom: 15px;
+    }
+
+    .card:nth-child(2){
+        margin-bottom: 15px;
+    }
+
+    .card.animate .features-icon {
+        background-color: var(--decoration-color);
+    }
+
+    .discription-card {
+        font-size: 12px;
+    }
+
+    h5{
+        font-size: 14px;
+    }
+
+    .social-networks-text{
+        font-size: 14px;
+    }
+
+    .layer {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .social-networks {
+        margin: 0 25px;
+    }
+
+    .layer.animate {
+        transform: rotate(-35deg) skew(20deg);
+    }
+    
+    .layer.animate span:nth-child(1) {
+        opacity: 0.2;
+    }
+    
+    .layer.animate span:nth-child(2) {
+        opacity: 0.4;
+        transform: translate(5px, -5px);
+    }
+    
+    .layer.animate span:nth-child(3) {
+        opacity: 0.6;
+        transform: translate(10px, -10px);
+    }
+    
+    .layer.animate span:nth-child(4) {
+        opacity: 0.8;
+        transform: translate(15px, -15px);
+    }
+    
+    .layer.animate span:nth-child(5) {
+        opacity: 1;
+        transform: translate(20px, -20px);
+    }
+    
+    .layer.animate:hover span {
+        box-shadow: -1px 1px 3px #0206f1;
+    }
+    
+    .text {
+        opacity: 0;
+    }
+    
+    .layer.animate:hover .text {
+        bottom: -35px;
+        opacity: 1;
+    }
+    
+}
+
+
+@media screen and (min-width: 1081px) {
+    .burger-icon{
+        display: none;
+    }
 }
