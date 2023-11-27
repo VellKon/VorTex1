@@ -544,6 +544,11 @@ a:hover .text{
         bottom: -35px;
         opacity: 1;
     }
+
+    .text{
+        opacity: 1;
+        bottom: -35px;
+    }
     
 }
 
@@ -673,15 +678,12 @@ a:hover .text{
     .layer.animate:hover span {
         box-shadow: -1px 1px 3px #0206f1;
     }
-    
-    .text {
-        opacity: 0;
-    }
-    
-    .layer.animate:hover .text {
-        bottom: -35px;
+
+    .text{
         opacity: 1;
+        bottom: -35px;
     }
+    
 }
 
 
