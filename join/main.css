@@ -1,19 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+:root{  /*Закладываем для цветов определенное название и значение, чтобы в последующем использовать var()*/
+  --main-color: #272c3f;
+  /* --item-color: #2272FF; */
+  --secondary-color: #12141d;
+  --decoration-color: #ff5ef7;
+  --xz-color: #5A0BD0;
+  --item-color: #5A0BD0;
+  --white: #fff;
+}
+
 body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	line-height: 1.7;
-	color: #2272FF;
-	background-color: #12141d;
+	color: #fff;
+	background-color: #0b0b0b;
   overflow: hidden;
   height: 100vh;
-  background: radial-gradient(ellipse at bottom, #12141d 0%, #12141d 100%);
 }
 a:hover {
 	text-decoration: none;
 }
 .link {
-  color: #2272FF;
+  color: #fff;
 }
 .link:hover {
   color: #c4c3ca;
@@ -52,7 +62,7 @@ display: none;
   padding: 0;
   margin: 10px auto;
   cursor: pointer;
-  background-color: #2272FF;
+  background-color: var(--decoration-color);
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before{
@@ -61,7 +71,7 @@ display: none;
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  color: #2272FF;
+  color: var(--decoration-color);
   background-color: #020305;
   font-family: 'unicons';
   content: '\eb4f';
@@ -97,11 +107,12 @@ display: none;
 .card-front, .card-back {
   width: 100%;
   height: 100%;
-  background-color: #2b2e38;
+  background-color: rgba(18, 20, 29);
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  border: 2px solid #ff5ef7;
 }
 .card-back {
   transform: rotateY(180deg);
@@ -159,6 +170,7 @@ display: none;
   text-align: left;
   -webkit-transition: all 200ms linear;
    transition: all 200ms linear;
+   color: var(--decoration-color);
 }
 .btn{  
   border-radius: 4px;
@@ -174,11 +186,124 @@ display: none;
   display: -ms-inline-flexbox;
   display: inline-flex;
   align-items: center;
-  background-color: #2272FF;
-  color: #000000;
+  background-image: radial-gradient(circle
+  farthest-corner at 10% 20%, var(--decoration-color)17.8%,
+  var(--item-color)100.2%);
+  border: none;
+  color: #fff;
 }
 .btn:hover{  
   background-color: #000000;
-  color: #2272FF;
+  color: #fff;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+
+.half-circle-container {
+  position: relative;
+  overflow: hidden;
+}
+  
+.half-circle-1::after {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(to top, var(--item-color) 40%, var(--decoration-color));
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  filter: blur(60px);
+  z-index: -1;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  transform: translateX(60%) translateY(65%) ;
+}
+
+.body {
+  height: 100vh;
+   background: linear-gradient(90deg, #0b0b0b, var(--main-color));
+
+}
+
+.slider-thumb-one {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 30vw;
+  height: 30vw;
+  background: var(--decoration-color);
+  border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  opacity: .3;
+  z-index: -1;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+
+.slider-thumb-two{
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  width: 30vw;
+  height: 30vw;
+  background: var(--item-color);
+  border-radius: 80% 47% 82% 35% / 45% 45% 80% 66%;
+  will-change: border-radius, transform, opacity;
+  animation: sliderShape 5s linear infinite;
+  display: block;
+  z-index: -1;
+  opacity: 0.3;
+  -webkit-animation: sliderShape 5s linear infinite;
+}
+
+@keyframes sliderShape{
+  0%,100%{
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  34%{
+      border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+  }
+  50%{
+    transform: translate3d(0,0,0) rotateZ(0.01deg);
+  }
+  67%{
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+    transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+  }
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+} 
+
+@media screen and (max-width: 425px) {
+
+  .form-style{
+    font-size: 12px;
+  }
+
+  .slider-thumb-one{
+    display: none;
+  }
+
+  .slider-thumb-two{
+    position: absolute;
+    background-color: var(--decoration-color);
+    width: 100%;
+    height: 63%;
+    bottom: 10%;
+  }
+
+  .half-circle-1{
+    display: none;
+  }
+
 }
